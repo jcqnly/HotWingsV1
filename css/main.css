@@ -9,13 +9,20 @@ body {
 }
 
 body #bg {
-  -webkit-clip-path: polygon(50% 0%, 100% 19%, 100% 100%, 0 100%, 0 0);
-          clip-path: polygon(50% 0%, 100% 19%, 100% 100%, 0 100%, 0 0);
+  -webkit-clip-path: polygon(69% 0, 100% 9%, 100% 100%, 0 100%, 0 0);
+          clip-path: polygon(69% 0, 100% 9%, 100% 100%, 0 100%, 0 0);
   background-color: #72848f;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: -1;
+}
+
+@media (min-width: 840px) {
+  body #bg {
+    -webkit-clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+  }
 }
 
 body header a {
@@ -26,7 +33,17 @@ body header a {
   text-transform: uppercase;
 }
 
-main section#shop {
+@media (min-width: 840px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% auto;
+        grid-template-columns: 50% auto;
+        grid-template-areas: "shop info";
+  }
+}
+
+main section#info {
   background: #fff;
   padding: 20px;
   margin: 1em auto;
@@ -34,5 +51,73 @@ main section#shop {
   -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   width: 80%;
+}
+
+@media (min-width: 840px) {
+  main section#info {
+    grid-area: info;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin: 1em;
+  }
+}
+
+main section#info ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+main section#info ul li {
+  margin-bottom: 10px;
+}
+
+main section#shop {
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+@media (min-width: 840px) {
+  main section#shop {
+    grid-area: shop;
+    text-align: left;
+    margin: 4em 0 0 4em;
+  }
+}
+
+main section#shop h1 {
+  font-size: 3em;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+main section#shop p {
+  font-size: 1.4em;
+}
+
+main section#shop a {
+  color: #e4e7e9;
+  border-radius: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2em;
+  background-color: #17b0f7;
+  display: block;
+  text-align: center;
+  margin: 50px auto 0 auto;
+  padding: 15px;
+}
+
+@media (min-width: 840px) {
+  main section#shop a {
+    display: inline-block;
+    padding: 15px 60px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
