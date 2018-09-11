@@ -9,7 +9,7 @@ Mobile first was developed with media queries created for a breakpoint of greate
 # Pictures
 
 ## Mobile
-![]()
+![mobile](/assets/mobileView.png)
 
 ## Desktop
-![]()
+![desktop](/assets/desktopView.png)
